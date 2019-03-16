@@ -4,7 +4,12 @@ function cariMean(arr) {
     hasil = hasil + arr[i];
   }
   var rata = (hasil / arr.length);
-  return Math.ceil(rata);
+  if ((Math.ceil(rata)-rata)>0.5) {
+    rata = Math.floor(rata);
+  } else {
+    rata = Math.ceil(rata);
+  }
+  return rata;
 }
 
 // TEST CASES
